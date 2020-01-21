@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+
   line-height: 2;
   font-size: 16px;
   text-transform: uppercase;
@@ -28,7 +28,7 @@ const StyledNavLinks = styled.ul`
   justify-content: space-between;
   margin: 0 1rem 0 1rem;
   li {
-    float: left;
+    display: inline-block;
     padding: 0 1rem 0 1rem;
   }
 `;
