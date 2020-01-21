@@ -1,19 +1,26 @@
 import Link from "next/link";
 import styled from "styled-components";
 const StyledNav = styled.div`
-  color: white;
+  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   line-height: 2;
   font-size: 16px;
   text-transform: uppercase;
+
 }
   a {
     text-decoration: none;
+    color: #333;
     padding: 0 1rem 0 1rem;
     display: block;
     text-align: center;
+    transition: all 0.2s ease;
+
+  }
+  a:hover {
+    color: #888;
   }
 `;
 
