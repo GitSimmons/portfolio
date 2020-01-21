@@ -1,27 +1,49 @@
 import Link from "next/link";
 import styled from "styled-components";
-const StyledHeader = styled.div`
+const StyledNav = styled.div`
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   line-height: 2;
-  font-family: "Open Sans", Lato, Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  @media (min-width: 768px) {
-    width: 70%;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+  a {
+    text-decoration: none;
+    padding: 0 1rem 0 1rem;
+    display: block;
+    text-align: center;
   }
-  padding: 2rem 0 2rem 0;
+`;
+
+const StyledNavLinks = styled.ul`
+  list-style-type: none;
+  justify-content: space-between;
+  margin: 0 1rem 0 1rem;
+  li {
+    float: left;
+  }
 `;
 
 const Nav = () => {
   return (
-    <StyledHeader>
+    <StyledNav>
       <Link href="/">Ben Simmons</Link>
-      <Link href="/">About</Link>
-      <Link href="/">Portfolio</Link>
-      <Link href="/">GitHub</Link>
-    </StyledHeader>
+      <StyledNavLinks>
+        <li>
+          <Link href="/">About</Link>
+        </li>
+
+        <li>
+          <Link href="/">Portfolio</Link>
+        </li>
+        <li>
+          <Link href="/">GitHub</Link>
+        </li>
+      </StyledNavLinks>
+      <Link href="/">Contact</Link>
+    </StyledNav>
   );
 };
 
