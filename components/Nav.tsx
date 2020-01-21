@@ -1,26 +1,25 @@
 import Link from "next/link";
 import styled from "styled-components";
+
 const StyledNav = styled.div`
-  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   line-height: 2;
   font-size: 16px;
   text-transform: uppercase;
-
+  padding: 1rem;
+  background-color: #fff;
 }
   a {
     text-decoration: none;
     color: #333;
-    padding: 0 1rem 0 1rem;
     display: block;
     text-align: center;
     transition: all 0.2s ease;
-
   }
   a:hover {
-    color: #888;
+    color: #be5657;
   }
 `;
 
@@ -30,6 +29,7 @@ const StyledNavLinks = styled.ul`
   margin: 0 1rem 0 1rem;
   li {
     float: left;
+    padding: 0 1rem 0 1rem;
   }
 `;
 

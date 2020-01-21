@@ -1,15 +1,21 @@
 import styled from "styled-components";
+import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import GlobalStyles from "../components/styles/GlobalStyles";
-const StyledDiv = styled.div`
-  color: red;
+
+const Container = styled.div`
+  width: 90vw;
+  margin: auto;
 `;
 
 function Home() {
   return (
     <>
       <GlobalStyles />
-      <Nav />
+      <Container>
+        <Nav />
+        <Hero />
+      </Container>
     </>
   );
 }

@@ -11,7 +11,7 @@ html {
   body {
     padding: 0;
     margin: 0;
-    background-image: radial-gradient(circle at top, #fff, grey);
+    background-image: #eee;
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
     background-attachment: fixed;
