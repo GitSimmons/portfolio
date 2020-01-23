@@ -33,6 +33,7 @@ const StyledHero = styled.div`
     }
   }
   ul {
+    text-transform: uppercase;
     list-style-type: none;
     li {
       display: inline-block;
@@ -44,10 +45,16 @@ const StyledHero = styled.div`
       }
     }
   }
+  .views {
+    color: #be5657;
+  }
+  .tools {
+    color: #777;
+  }
 `;
 
 const ImageContainer = styled.div`
-  max-width: 95%;
+  max-width: 100%;
   display: flex;
   margin: auto;
   img {
@@ -72,10 +79,10 @@ const Hero = () => (
         <img src="/images/projects/ragnarok/ragnarok-narrow.jpg" />
       </div>
     </ImageContainer>
-    <ul>
+    <ul className="views">
       <li>Single Page App</li>
     </ul>
-    <ul>
+    <ul className="tools">
       <li>React</li>
       <li>Next</li>
       <li>Styled-Components</li>
