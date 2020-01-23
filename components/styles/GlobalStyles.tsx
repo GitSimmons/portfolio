@@ -20,9 +20,10 @@ html {
     box-sizing: border-box;
   }
   *, *:before, *:after {
-    box-sizing: inherit;
+    margin: 0;
     padding: 0;
-    margin: 0; 
+    border: 0;
+    box-sizing: border-box;
   }
   body {
     padding: 0;
@@ -34,6 +35,10 @@ html {
     font-family: 'Roboto', Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 1.5
+  }
+  div {
+    display: block;
+    }
   }
 `;
 
