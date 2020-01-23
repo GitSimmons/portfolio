@@ -2,8 +2,28 @@ import styled from "styled-components";
 
 const StyledHero = styled.div`
   background-image: radial-gradient(circle at left, #fff, #ddd);
+  padding: 1rem;
+  header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.62em;
+    width: 100%;
+    position: relative;
+  }
   h3 {
+    display: block;
     margin: 0;
+    font-size: 3.5rem;
+    /* text-transform: uppercase; */
+    font-family: "Kumar One Outline", cursive;
+  }
+  header:after {
+    content: "";
+    flex: auto;
+    display: inline-block;
+    height: 0.1rem;
+    margin-left: 1rem;
+    background-color: #000;
   }
   a {
     text-decoration: none;
@@ -38,7 +58,9 @@ const ImageContainer = styled.div`
 
 const Hero = () => (
   <StyledHero>
-    <h3>Ragnarok MVP Tracker</h3>
+    <header>
+      <h3>Ragnarok MVP Tracker</h3>
+    </header>
     <ImageContainer>
       <div style={{ padding: "0.2rem" }}>
         <img src="/images/projects/ragnarok/ragnarok-fullwidth.jpg" />
