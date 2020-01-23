@@ -36,20 +36,30 @@ const StyledNavLinks = styled.ul`
 const Nav = () => {
   return (
     <StyledNav>
-      <Link href="/">Ben Simmons</Link>
+      <Link href="/">
+        <a>Ben Simmons</a>
+      </Link>
       <StyledNavLinks>
         <li>
-          <Link href="/">About</Link>
+          <Link href="/">
+            <a>About</a>
+          </Link>
         </li>
 
         <li>
-          <Link href="/">Portfolio</Link>
+          <Link href="/">
+            <a>Portfolio</a>
+          </Link>
         </li>
         <li>
-          <Link href="/">GitHub</Link>
+          <Link href="/">
+            <a>GitHub</a>
+          </Link>
         </li>
       </StyledNavLinks>
-      <Link href="/">Contact</Link>
+      <Link href="/">
+        <a>Contact</a>
+      </Link>
     </StyledNav>
   );
 };

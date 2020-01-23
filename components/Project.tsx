@@ -1,9 +1,7 @@
 import styled from "styled-components";
-const StyledHero = styled.div`
+const StyledProject = styled.div`
   background-image: radial-gradient(circle at left, #fff, #ddd);
   padding: 1rem;
-  margin-bottom: 1rem;
-  height: 30rem;
   header {
     display: flex;
     align-items: center;
@@ -54,5 +52,30 @@ const StyledHero = styled.div`
   }
 `;
 
-const Hero = () => <StyledHero></StyledHero>;
-export default Hero;
+const Project = ({ description, links, title, tools, views }) => (
+  <StyledProject>
+    <header>
+      <h3>{title}</h3>
+    </header>
+
+    <ul className="tools">{tools && tools.map(tool => <li>{tool}</li>)}</ul>
+    <h4>Description</h4>
+    <p>{description}</p>
+    <h4>Links</h4>
+    <ul>
+      {links &&
+        links.map(link => (
+          <li>
+            {link.href ? (
+              <a href={link.href} target="_blank">
+                {link.name}
+              </a>
+            ) : (
+              link.name
+            )}
+          </li>
+        ))}
+    </ul>
+  </StyledProject>
+);
+export default Project;
