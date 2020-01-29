@@ -13,14 +13,5 @@ const StyledHero = styled.div`
   }
 `;
 
-const Hero = () => (
-  <StyledHero>
-    <span>
-      Hi there, I'm Ben <br />
-      a Full Stack Developer
-      <br />
-      from Montreal, QC
-    </span>
-  </StyledHero>
-);
+const Hero = ({ children }) => <StyledHero>{children}</StyledHero>;
 export default Hero;

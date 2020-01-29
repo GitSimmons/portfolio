@@ -21,7 +21,14 @@ function Home() {
           <link rel="icon" type="image/png" href="/favicon.png" />
         </Head>
         <Nav />
-        <Hero />
+        <Hero>
+          <span>
+            Hi there, I'm Ben <br />
+            a Full Stack Developer
+            <br />
+            from Montreal, QC
+          </span>
+        </Hero>
         {projects.map(project => (
           <Project {...project} key={project.title} />
         ))}
