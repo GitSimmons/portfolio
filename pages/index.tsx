@@ -3,7 +3,7 @@ import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Project from "../components/Project";
 import GlobalStyles from "../components/styles/GlobalStyles";
-
+import Head from "next/head";
 import projects from "../data/projects";
 
 const Container = styled.div`
@@ -16,10 +16,14 @@ function Home() {
     <>
       <GlobalStyles />
       <Container>
+        <Head>
+          <title>Ben Simmons | Portfolio</title>
+          <link rel="icon" type="image/png" href="/favicon.png" />
+        </Head>
         <Nav />
-        {/* <Hero /> */}
+        <Hero />
         {projects.map(project => (
-          <Project {...project} />
+          <Project {...project} key={project.title} />
         ))}
       </Container>
     </>
