@@ -52,7 +52,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="https://github.com/GitSimmons/">
             <a>GitHub</a>
           </Link>
         </li>
