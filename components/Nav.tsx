@@ -9,7 +9,6 @@ const StyledNav = styled.div`
   padding: 1rem;
   color: ${props => props.theme.colors.textColor};
   background-color: ${props => props.theme.colors.background};
-}
   a {
     text-decoration: none;
     color: ${props => props.theme.colors.textColor};
@@ -23,6 +22,9 @@ const StyledNav = styled.div`
 `;
 
 const StyledNavLinks = styled.ul`
+  @media (max-width: 768px) {
+    display: none;
+  }
   list-style-type: none;
   justify-content: space-between;
   margin: 0 1rem 0 1rem;
