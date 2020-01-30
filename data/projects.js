@@ -55,7 +55,9 @@ const projects = [
       "PRISMA",
       "STRIPE"
     ],
-    description: `As an homage to my previous emploment at an antique store, I wanted my first ambitious project to mirror my dreams of a web store while I was working there. An e-shop complete with a CMS for CRUD operations, user permissions, stripe checkout, authentication, search, and so much more. With the backend largely based off Wes Bos' Advanced React course, I added my own touches by using some of (at the time) the latest React features such as React Hooks and implementing some nice front-end components such as a carousel for the item listings(inspired by AirBNB) and a gallery for a more detailed view (inspired by Sotheby's galleries for antiques). There's still plenty I'd like to add to this site, but for now I'm using the lessons learned from it on other projects.`,
+    lead: `As an homage to my previous emploment at an antique store, I wanted my first ambitious project to mirror my dreams of a web store while I was working there. An e-shop complete with a CMS for CRUD operations, user permissions, stripe checkout, authentication, search, and so much more.`,
+    description: `
+    With the backend largely based off Wes Bos' Advanced React course, I added my own touches by using some of (at the time) the latest React features such as React Hooks and implementing some nice front-end components such as a carousel for the item listings(inspired by AirBNB) and a gallery for a more detailed view (inspired by Sotheby's galleries for antiques). There's still plenty I'd like to add to this site, but for now I'm using the lessons learned from it on other projects.`,
     links: [{ name: "Contact me for demo links" }]
   },
   {
@@ -77,8 +79,8 @@ const projects = [
       "FIRESTORE",
       "AWS LAMBDA"
     ],
-    description: `Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.
-  This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users.`,
+    lead: `Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.`,
+    description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users.`,
     links: [
       { name: "LIVE SITE", href: "https://r0mvptracker.now.sh/" },
       { name: "Front-end Github" },
@@ -120,7 +122,8 @@ const projects = [
       }
     ],
     tools: ["REACT", "STYLED-COMPONENTS", "Netlify"],
-    description: `While most game guides for Final Fantasy XIV are distributed as unstyled google docs, Sovasin Kair distributed his with a stunning design as a png image. Unfortunately, due to it's enormous size, it was difficult to use effectively. I offered to transform his design into a single page site that could be viewed as easily on mobile as on desktop.`,
+    lead: `While most game guides for Final Fantasy XIV are distributed as unstyled google docs, Sovasin Kair distributed his with a stunning design as a png image. Unfortunately, due to it's enormous size, it was difficult to use effectively. I offered to transform his design into a single page site that could be viewed as easily on mobile as on desktop.`,
+    description: "",
     links: [
       { name: "LIVE SITE", href: "https://sch-sovas.netlify.com/" },
       {
@@ -138,7 +141,8 @@ const projects = [
       }
     ],
     tools: ["Javascript", "CSS"],
-    description: `A no-frameworks JS + CSS approach to adding some quality of life features to the Confluence Table of Contents Macro. Features include: Multi Level Highlighting, Sticky-ish Positioning, and Collapsable Headings`,
+    lead: `A no-frameworks JS + CSS approach to adding some quality of life features to the Confluence Table of Contents Macro. Features include: Multi Level Highlighting, Sticky-ish Positioning, and Collapsable Headings`,
+    description: "",
     links: [
       {
         name: "View on Code Pen",
