@@ -12,7 +12,7 @@ export const light = {
 export const dark = {
   colors: {
     background: "#0f0f0f",
-    gradient: "radial-gradient(circle at left, #0f0f0f, #191919)",
+    gradient: "radial-gradient(circle at left, #0f0f0f, #111)",
     textColor: "#ddd",
     buttonColor: "#4CA3D9",
     inactiveColor: "#777",
