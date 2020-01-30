@@ -4,9 +4,8 @@ const StyledHero = styled.div`
   align-items: center;
   color: ${props => props.theme.colors.textColor};
   background-image: ${props => props.theme.colors.gradient};
-  padding: 2rem;
+  padding: 1rem;
   margin-bottom: 1rem;
-
   font-weight: 900;
   font-size: 5vw;
 
