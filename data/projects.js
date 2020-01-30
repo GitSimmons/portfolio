@@ -124,7 +124,7 @@ const projects = [
     links: [
       { name: "LIVE SITE", href: "https://sch-sovas.netlify.com/" },
       {
-        name: "Front-end Github",
+        name: "Github",
         href: "https://github.com/GitSimmons/sch.sovas"
       }
     ]
