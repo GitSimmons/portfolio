@@ -19,6 +19,11 @@ const StyledNav = styled.div`
   a:hover {
     color: ${props => props.theme.colors.buttonColor};
   }
+  @media (max-width: 768px) {
+    a:last-child {
+      padding-right: 1rem;
+    }
+  }
 `;
 
 const StyledNavLinks = styled.ul`
