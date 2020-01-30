@@ -14,7 +14,7 @@ const StyledProject = styled.div`
   h3 {
     display: block;
     margin: 0;
-    font-size: 3.5rem;
+    font-size: 5vw;
     /* text-transform: uppercase; */
     font-family: "Kumar One Outline", cursive;
   }
@@ -72,7 +72,12 @@ const ImageContainer = styled.div`
   font-size: calc((90vw / 3.14) - 0.5rem);
   display: flex;
   justify-content: space-between;
-
+  @media (max-width: 768px) {
+    font-size: calc((90vw / 1.78) - 0.5rem);
+    div:not(:first-child) {
+      display: none;
+    }
+  }
   /* div:not(:last-child) {
     margin-right: 0.5rem;
   } */
