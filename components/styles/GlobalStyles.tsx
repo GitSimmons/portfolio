@@ -1,20 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Kumar+One+Outline|Roboto&display=swap');
-@font-face {
-    font-family: 'Kumar One Outline';
-    src: url('/fonts/Kumar_One_Outline/KumarOneOutline-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-  }
-  @font-face {
-    font-family: 'Roboto';
-    src: url('/fonts/Roboto/Roboto-Regular.ttf');
-    font-weight: normal;
-    font-style: normal;
-    font-display: auto;
-
 html {
     box-sizing: border-box;
     scroll-behavior: smooth;

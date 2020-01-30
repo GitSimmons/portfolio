@@ -16,31 +16,33 @@ const Container = styled.div`
 function Home() {
   const [theme, setTheme] = useState(light);
   return (
-    <>
-      <GlobalStyles theme={theme} />
-      <ThemeProvider theme={theme}>
-        <ThemeSwitcher setTheme={setTheme} theme={theme} />
-        <Container>
-          <Head>
-            <title>Ben Simmons | Portfolio</title>
-            <link rel="icon" type="image/png" href="/favicon.png" />
-          </Head>
-          <Nav />
-          <Hero>
-            <p>
-              Hi there, I'm Ben, <br />a <span>Full Stack Developer</span>
-              <br />
-              from Montreal, QC
-            </p>
-          </Hero>
-          <div id="projects">
-            {projects.map(project => (
-              <Project {...project} key={project.title} />
-            ))}
-          </div>
-        </Container>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <ThemeSwitcher setTheme={setTheme} theme={theme} />
+      <Container>
+        <Head>
+          <title>Ben Simmons | Portfolio</title>
+          <link rel="icon" type="image/png" href="/favicon.png" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Kumar+One+Outline|Roboto&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <Nav />
+        <Hero>
+          <p>
+            Hi there, I'm Ben, <br />a <span>Full Stack Developer</span>
+            <br />
+            from Montreal, QC
+          </p>
+        </Hero>
+        <div id="projects">
+          {projects.map(project => (
+            <Project {...project} key={project.title} />
+          ))}
+        </div>
+      </Container>
+    </ThemeProvider>
   );
 }
 
