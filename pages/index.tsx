@@ -17,8 +17,8 @@ function Home() {
   const [theme, setTheme] = useState(light);
   return (
     <>
+      <GlobalStyles theme={theme} />
       <ThemeProvider theme={theme}>
-        <GlobalStyles />
         <ThemeSwitcher setTheme={setTheme} theme={theme} />
         <Container>
           <Head>

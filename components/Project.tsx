@@ -48,6 +48,8 @@ const StyledProject = styled.div`
     text-transform: uppercase;
     list-style-type: none;
     color: ${props => props.theme.colors.inactiveColor};
+    padding-inline-start: 40px;
+
     li {
       display: inline-block;
       &:not(:last-child) {
