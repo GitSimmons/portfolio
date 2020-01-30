@@ -3,7 +3,9 @@ export const light = {
     background: "#fff",
     gradient: "radial-gradient(circle at left, #fff, #eee)",
     textColor: "#2E3440",
-    buttonColor: "#be5657"
+    buttonColor: "#be5657",
+    inactiveColor: "#777",
+    gradientEndColor: "#eee"
   }
 };
 
@@ -12,6 +14,8 @@ export const dark = {
     background: "#0f0f0f",
     gradient: "radial-gradient(circle at left, #0f0f0f, #1f1f1f)",
     textColor: "#ddd",
-    buttonColor: "#4CA3D9"
+    buttonColor: "#4CA3D9",
+    inactiveColor: "#777",
+    gradientEndColor: "#1f1f1f"
   }
 };
