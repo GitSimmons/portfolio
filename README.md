@@ -15,6 +15,6 @@ Yep, that's it.
 ## Attributions
 
 The header for this project was inspired by https://www.juliacodes.com/ ,
-though inspiration is a strong word because really, I more or less stole it.
+though inspiration is a strong word because really, I more or less copied it exactly.
 
 The portfolio project sections are based on Pookage's awesome design, visible at: https://pookage.dev/portfolio
