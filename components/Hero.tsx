@@ -7,10 +7,11 @@ const StyledHero = styled.div`
   padding: 2rem;
   margin-bottom: 1rem;
 
+  font-weight: 900;
+  font-size: 5vw;
+
   span {
-    /* width: 100%; */
-    font-weight: 900;
-    font-size: 5vw;
+    color: ${props => props.theme.colors.buttonColor};
   }
 `;
 

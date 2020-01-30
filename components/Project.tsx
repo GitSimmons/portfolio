@@ -3,7 +3,6 @@ import React from "react";
 const StyledProject = styled.div`
   background-image: ${props => props.theme.colors.gradient};
   color: ${props => props.theme.colors.textColor};
-
   padding: 1rem;
   header {
     display: flex;
@@ -43,6 +42,7 @@ const StyledProject = styled.div`
   ul {
     text-transform: uppercase;
     list-style-type: none;
+    color: ${props => props.theme.colors.inactiveColor};
     li {
       display: inline-block;
       &:not(:last-child) {
@@ -52,12 +52,6 @@ const StyledProject = styled.div`
         }
       }
     }
-  }
-  .views {
-    color: ${props => props.theme.colors.buttonColor};
-  }
-  .tools {
-    color: #777;
   }
 `;
 
@@ -162,16 +156,14 @@ const Project = ({ description, links, title, tools, views }) => {
           </Carousel>
         ))}
       </ImageContainer>
-      <ul className="views">
+      <ul>
         {views.map(view => (
           <li key={view.name}>
             <span onClick={() => handleClick(view.name)}>{view.name}</span>
           </li>
         ))}
       </ul>
-      <ul className="tools">
-        {tools && tools.map(tool => <li key={tool}>{tool}</li>)}
-      </ul>
+      <ul>{tools && tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
       <h4>Description</h4>
       <p>{description}</p>
       <h4>Links</h4>
