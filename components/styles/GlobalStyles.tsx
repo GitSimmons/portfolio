@@ -28,10 +28,7 @@ html {
   body {
     padding: 0;
     margin: 0;
-    background-image: #eee;
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    background-attachment: fixed;
+    background-color: #fff;
     font-family: 'Roboto', Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 1.5
