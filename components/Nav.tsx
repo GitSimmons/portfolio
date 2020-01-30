@@ -47,18 +47,18 @@ const Nav = () => {
       </Link>
       <StyledNavLinks>
         <li>
-          <Link href="/">
+          <Link href="#about">
             <a>About</a>
           </Link>
         </li>
 
         <li>
-          <Link href="/">
+          <Link href="#projects">
             <a>Portfolio</a>
           </Link>
         </li>
         <li>
-          <Link href="https://github.com/GitSimmons/">
+          <Link href="#">
             <a>Contact</a>
           </Link>
         </li>

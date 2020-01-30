@@ -15,5 +15,9 @@ const StyledHero = styled.div`
     color: ${props => props.theme.colors.buttonColor};
   }
 `;
-const Hero = ({ children }) => <StyledHero>{children}</StyledHero>;
+const Hero = ({ children }) => (
+  <StyledHero>
+    <div id="about">{children}</div>
+  </StyledHero>
+);
 export default Hero;

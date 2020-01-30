@@ -33,9 +33,11 @@ function Home() {
               from Montreal, QC
             </p>
           </Hero>
-          {projects.map(project => (
-            <Project {...project} key={project.title} />
-          ))}
+          <div id="projects">
+            {projects.map(project => (
+              <Project {...project} key={project.title} />
+            ))}
+          </div>
         </Container>
       </ThemeProvider>
     </>
