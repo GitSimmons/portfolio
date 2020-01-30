@@ -2,7 +2,8 @@ import styled from "styled-components";
 const StyledHero = styled.div`
   display: flex;
   align-items: center;
-  background-image: radial-gradient(circle at left, #fff, #ddd);
+  color: ${props => props.theme.colors.textColor};
+  background-image: ${props => props.theme.colors.gradient};
   padding: 2rem;
   margin-bottom: 1rem;
 

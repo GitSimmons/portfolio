@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-// import KumarOneOutline from "../../public/fonts/KumarOneOutline-Regular.ttf";
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css?family=Kumar+One+Outline|Roboto&display=swap');
 @font-face {
@@ -28,7 +27,7 @@ html {
   body {
     padding: 0;
     margin: 0;
-    background-color: #fff;
+    background-color: ${props => props.theme.colors.background};
     font-family: 'Roboto', Arial,Helvetica,sans-serif;
     font-size: 14px;
     line-height: 1.5

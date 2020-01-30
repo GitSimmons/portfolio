@@ -4,22 +4,22 @@ import styled from "styled-components";
 const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
-
   line-height: 2;
   font-size: 16px;
   text-transform: uppercase;
   padding: 1rem;
-  background-color: #fff;
+  color: ${props => props.theme.colors.textColor};
+  background-color: ${props => props.theme.colors.background};
 }
   a {
     text-decoration: none;
-    color: #333;
+    color: ${props => props.theme.colors.textColor};
     display: block;
     text-align: center;
     transition: all 0.2s ease;
   }
   a:hover {
-    color: #be5657;
+    color: ${props => props.theme.colors.buttonColor};
   }
 `;
 

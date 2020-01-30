@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import React from "react";
 const StyledProject = styled.div`
-  background-image: radial-gradient(circle at left, #fff, #ddd);
+  background-image: ${props => props.theme.colors.gradient};
+  color: ${props => props.theme.colors.textColor};
+
   padding: 1rem;
   header {
     display: flex;
@@ -23,12 +25,13 @@ const StyledProject = styled.div`
     display: inline-block;
     height: 0.1rem;
     margin-left: 1rem;
-    background-color: #000;
+    background-color: ${props => props.theme.colors.textColor};
   }
   a,
-  button {
+  span {
     text-decoration: none;
-    color: #be5657;
+    color: ${props => props.theme.colors.buttonColor};
+    cursor: pointer;
     &:hover {
       text-decoration: underline;
     }
@@ -51,7 +54,7 @@ const StyledProject = styled.div`
     }
   }
   .views {
-    color: #be5657;
+    color: ${props => props.theme.colors.buttonColor};
   }
   .tools {
     color: #777;
@@ -162,9 +165,7 @@ const Project = ({ description, links, title, tools, views }) => {
       <ul className="views">
         {views.map(view => (
           <li key={view.name}>
-            <button type="button" onClick={() => handleClick(view.name)}>
-              {view.name}
-            </button>
+            <span onClick={() => handleClick(view.name)}>{view.name}</span>
           </li>
         ))}
       </ul>
