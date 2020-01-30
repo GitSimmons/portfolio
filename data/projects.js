@@ -80,10 +80,13 @@ const projects = [
       "AWS LAMBDA"
     ],
     lead: `Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.`,
-    description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users.`,
+    description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. Sorry the backend GH is currently available. Chrome + Puppetteer for AWS lambda doesn't align perfectly with running it locally, and the secrets are setup in a strange way. I'll work on getting a local-friendly version up soon!`,
     links: [
       { name: "LIVE SITE", href: "https://r0mvptracker.now.sh/" },
-      { name: "Front-end Github" },
+      {
+        name: "Front-end Github",
+        href: "https://github.com/GitSimmons/r0mvptracker"
+      },
       { name: "Back-end Github" }
     ]
   },
