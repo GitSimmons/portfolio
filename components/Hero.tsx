@@ -7,12 +7,13 @@ const StyledHero = styled.div`
   padding: 1rem;
   margin-bottom: 1rem;
   font-weight: 900;
-  font-size: 5vw;
-
+  font-size: 7vw;
+  @media (min-width: 900px) {
+    font-size: 4rem;
+  }
   span {
     color: ${props => props.theme.colors.buttonColor};
   }
 `;
-
 const Hero = ({ children }) => <StyledHero>{children}</StyledHero>;
 export default Hero;
