@@ -21,7 +21,7 @@ const projects = [
         mobile: "/images/projects/auntsadies/3-mobile.jpg"
       },
       {
-        name: "Editting CMS",
+        name: "Editing CMS",
         desktop: "/images/projects/auntsadies/4-desktop.jpg",
         tablet: "/images/projects/auntsadies/4-tablet.jpg",
         mobile: "/images/projects/auntsadies/4-mobile.jpg"
