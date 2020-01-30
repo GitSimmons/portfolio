@@ -1,7 +1,9 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
+import { NONAME } from "dns";
 const StyledProject = styled.div`
   background-image: ${props => props.theme.colors.gradient};
+  margin-top: 1rem;
   color: ${props => props.theme.colors.textColor};
   padding: 1rem;
   header {
@@ -15,6 +17,9 @@ const StyledProject = styled.div`
     display: block;
     margin: 0;
     font-size: 5vw;
+    @media (min-width: 900px) {
+      font-size: 3.5rem;
+    }
     /* text-transform: uppercase; */
     font-family: "Kumar One Outline", cursive;
   }
@@ -70,6 +75,7 @@ const StyledProject = styled.div`
 */
 const ImageContainer = styled.div`
   font-size: calc((90vw / 3.14) - 0.5rem);
+  margin-bottom: 0.3rem;
   display: flex;
   justify-content: space-between;
   @media (max-width: 768px) {
@@ -107,7 +113,35 @@ const ImageWrapper = styled.section`
     display: block;
   }
 `;
-
+const StyledDescriptionWrapper = styled.div`
+  span {
+    display: block;
+    padding: 1rem 0rem;
+  }
+  p {
+    display: ${props => (props.visible ? "block" : "none")};
+  }
+  @media (min-width: 768px) {
+    span {
+      display: none;
+    }
+    p {
+      display: block;
+    }
+  }
+`;
+const DescriptionWrapper = ({ children }) => {
+  const [visible, setVisible] = useState(false);
+  return (
+    <StyledDescriptionWrapper visible={visible}>
+      <span onClick={() => setVisible(!visible)}>
+        read {visible ? "less ( - )" : "more ( + )"}
+        <br />
+      </span>
+      {<p>{children}</p>}
+    </StyledDescriptionWrapper>
+  );
+};
 const Carousel = ({ children, aspect }) => {
   return (
     <ScrollBarHider aspect={aspect}>
@@ -116,7 +150,7 @@ const Carousel = ({ children, aspect }) => {
   );
 };
 
-const Project = ({ description, links, title, tools, views }) => {
+const Project = ({ description, lead, links, title, tools, views }) => {
   const aspectRatios = {
     desktop: "1.79em",
     tablet: "0.77em",
@@ -170,7 +204,9 @@ const Project = ({ description, links, title, tools, views }) => {
       </ul>
       <ul>{tools && tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
       <h4>Description</h4>
-      <p>{description}</p>
+      <p>{lead}</p>
+
+      {description && <DescriptionWrapper>{description}</DescriptionWrapper>}
       <h4>Links</h4>
       <ul>
         {links &&
