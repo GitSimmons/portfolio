@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Head from "next/head";
+
+import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Nav from "../components/Nav";
 import Project from "../components/Project";
+import ToC from "../components/ToC";
+
 import ThemeSwitcher from "../components/ThemeSwitcher";
 import GlobalStyles from "../components/styles/GlobalStyles";
-import projects from "../data/projects";
 import { light } from "../components/styles/themes";
+
+import projects from "../data/projects";
 const Container = styled.div`
   width: 90vw;
   margin: auto;
@@ -15,6 +20,15 @@ const Container = styled.div`
 
 function Home() {
   const [theme, setTheme] = useState(light);
+  const refs = projects.reduce((acc, project) => {
+    acc[project.title] = React.createRef();
+    return acc;
+  });
+  const handleClick = title =>
+    refs[title].current.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -36,11 +50,28 @@ function Home() {
             from Montreal, QC
           </p>
         </Hero>
-        <div id="projects">
-          {projects.map(project => (
-            <Project {...project} key={project.title} />
-          ))}
+        <div style={{ position: "relative", display: "flex" }}>
+          <ToC>
+            <p>Projects</p>
+            <ul>
+              {projects.map(project => (
+                <li key={project.title}>
+                  <a href={"#" + project.title}>{project.title} </a>
+                </li>
+              ))}
+              <br />
+              <li>
+                <a href="#">Back to Top</a>
+              </li>
+            </ul>
+          </ToC>
+          <div id="projects">
+            {projects.map(project => (
+              <Project {...project} key={project.title} />
+            ))}
+          </div>
         </div>
+        <Footer />
       </Container>
     </ThemeProvider>
   );

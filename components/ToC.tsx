@@ -1,0 +1,34 @@
+import styled from "styled-components";
+
+const StyledToC = styled.div`
+  position: sticky;
+  position: -webkit-sticky;
+  align-self: flex-start;
+  top: 6rem;
+  padding: 2rem 1rem;
+  font-size: 1rem;
+  /* text-align: right; */
+  p {
+    color: ${props => props.theme.colors.textColor};
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    color: ${props => props.theme.colors.buttonColor};
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  @media (max-width: 768px) {
+    display: none;
+    min-width: 0px;
+  }
+  min-width: 225px;
+`;
+const ToC = ({ children }) => {
+  return <StyledToC>{children}</StyledToC>;
+};
+
+export default ToC;

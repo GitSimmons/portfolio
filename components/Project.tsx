@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import { NONAME } from "dns";
+
 const StyledProject = styled.div`
   background-image: ${props => props.theme.colors.gradient};
   margin-top: 1rem;
@@ -76,7 +76,7 @@ const StyledProject = styled.div`
    bar of >10vw, the site should look fine.
 */
 const ImageContainer = styled.div`
-  font-size: calc((90vw / 3.14) - 0.5rem);
+  font-size: calc(((90vw - 225px) / 3.14) - 0.5rem);
   margin-bottom: 0.3rem;
   display: flex;
   justify-content: space-between;
@@ -180,7 +180,7 @@ const Project = ({ description, lead, links, title, tools, views }) => {
     });
   return (
     <StyledProject>
-      <header>
+      <header id={title}>
         <h3>{title}</h3>
       </header>
       <ImageContainer>
