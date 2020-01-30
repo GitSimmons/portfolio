@@ -54,12 +54,12 @@ const Nav = () => {
         </li>
         <li>
           <Link href="https://github.com/GitSimmons/">
-            <a>GitHub</a>
+            <a>Contact</a>
           </Link>
         </li>
       </StyledNavLinks>
-      <Link href="/">
-        <a>Contact</a>
+      <Link href="https://github.com/GitSimmons/">
+        <a>Github</a>
       </Link>
     </StyledNav>
   );
