@@ -218,7 +218,7 @@ const Project = ({ description, lead, links, title, tools, views }) => {
           links.map(link => (
             <li key={link.name}>
               {link.href ? (
-                <a href={link.href} target="_blank">
+                <a href={link.href} target="_blank" rel="noopener">
                   {link.name}
                 </a>
               ) : (
