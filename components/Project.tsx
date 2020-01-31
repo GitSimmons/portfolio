@@ -191,7 +191,10 @@ const Project = ({ description, lead, links, title, tools, views }) => {
                 ref={screenshots[view.name + format]}
                 key={view.name + view[format]}
               >
-                <img src={view[format]} />
+                <img
+                  src={view[format]}
+                  alt={"Image of " + view.name + "on" + format}
+                />
               </ImageWrapper>
             ))}
           </Carousel>
