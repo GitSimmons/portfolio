@@ -41,6 +41,10 @@ function Home() {
             href="https://fonts.googleapis.com/css?family=Kumar+One+Outline|Roboto&display=swap"
             rel="stylesheet"
           />
+          <meta
+            name="Description"
+            content="Ben Simmons is a full stack developer who works primarily with React, Typescript and GraphQL."
+          />
         </Head>
         <Nav />
         <Hero>
