@@ -14,6 +14,9 @@ const StyledToC = styled.div`
   ul {
     list-style: none;
   }
+  li:last-child {
+    padding-top: 1rem;
+  }
   a {
     color: ${props => props.theme.colors.buttonColor};
     text-decoration: none;

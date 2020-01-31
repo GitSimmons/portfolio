@@ -63,7 +63,6 @@ function Home() {
                   <a href={"#" + project.title}>{project.title} </a>
                 </li>
               ))}
-              <br />
               <li>
                 <a href="#">Back to Top</a>
               </li>
