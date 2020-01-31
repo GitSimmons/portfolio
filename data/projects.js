@@ -4,45 +4,45 @@ const projects = [
     views: [
       {
         name: "Landing",
-        desktop: "/images/projects/auntsadies/1-desktop.jpg",
-        tablet: "/images/projects/auntsadies/1-tablet.jpg",
-        mobile: "/images/projects/auntsadies/1-mobile.jpg"
+        desktop: "/projects/auntsadies/1-desktop",
+        tablet: "/projects/auntsadies/1-tablet",
+        mobile: "/projects/auntsadies/1-mobile"
       },
       {
         name: "Cart",
-        desktop: "/images/projects/auntsadies/2-desktop.jpg",
-        tablet: "/images/projects/auntsadies/2-tablet.jpg",
-        mobile: "/images/projects/auntsadies/2-mobile.jpg"
+        desktop: "/projects/auntsadies/2-desktop",
+        tablet: "/projects/auntsadies/2-tablet",
+        mobile: "/projects/auntsadies/2-mobile"
       },
       {
         name: "Item Cards",
-        desktop: "/images/projects/auntsadies/3-desktop.jpg",
-        tablet: "/images/projects/auntsadies/3-tablet.jpg",
-        mobile: "/images/projects/auntsadies/3-mobile.jpg"
+        desktop: "/projects/auntsadies/3-desktop",
+        tablet: "/projects/auntsadies/3-tablet",
+        mobile: "/projects/auntsadies/3-mobile"
       },
       {
         name: "Editing CMS",
-        desktop: "/images/projects/auntsadies/4-desktop.jpg",
-        tablet: "/images/projects/auntsadies/4-tablet.jpg",
-        mobile: "/images/projects/auntsadies/4-mobile.jpg"
+        desktop: "/projects/auntsadies/4-desktop",
+        tablet: "/projects/auntsadies/4-tablet",
+        mobile: "/projects/auntsadies/4-mobile"
       },
       {
         name: "Gallery",
-        desktop: "/images/projects/auntsadies/5-desktop.jpg",
-        tablet: "/images/projects/auntsadies/5-tablet.jpg",
-        mobile: "/images/projects/auntsadies/5-mobile.jpg"
+        desktop: "/projects/auntsadies/5-desktop",
+        tablet: "/projects/auntsadies/5-tablet",
+        mobile: "/projects/auntsadies/5-mobile"
       },
       {
         name: "Login",
-        desktop: "/images/projects/auntsadies/6-desktop.jpg",
-        tablet: "/images/projects/auntsadies/6-tablet.jpg",
-        mobile: "/images/projects/auntsadies/6-mobile.jpg"
+        desktop: "/projects/auntsadies/6-desktop",
+        tablet: "/projects/auntsadies/6-tablet",
+        mobile: "/projects/auntsadies/6-mobile"
       },
       {
         name: "Stripe Checkout",
-        desktop: "/images/projects/auntsadies/7-desktop.jpg",
-        tablet: "/images/projects/auntsadies/7-tablet.jpg",
-        mobile: "/images/projects/auntsadies/7-mobile.jpg"
+        desktop: "/projects/auntsadies/7-desktop",
+        tablet: "/projects/auntsadies/7-tablet",
+        mobile: "/projects/auntsadies/7-mobile"
       }
     ],
     tools: [
@@ -65,9 +65,9 @@ const projects = [
     views: [
       {
         name: "Single Page App",
-        desktop: "/images/projects/ragnarok/ragnarok-desktop.jpg",
-        tablet: "/images/projects/ragnarok/ragnarok-tablet.png",
-        mobile: "/images/projects/ragnarok/ragnarok-mobile.png"
+        desktop: "/projects/ragnarok/ragnarok-desktop",
+        tablet: "/projects/ragnarok/ragnarok-tablet",
+        mobile: "/projects/ragnarok/ragnarok-mobile"
       }
     ],
     tools: [
@@ -95,33 +95,33 @@ const projects = [
     views: [
       {
         name: "Landing Page",
-        desktop: "/images/projects/sch/1-desktop.png",
-        tablet: "/images/projects/sch/1-tablet.png",
-        mobile: "/images/projects/sch/1-mobile.png"
+        desktop: "/projects/sch/1-desktop",
+        tablet: "/projects/sch/1-tablet",
+        mobile: "/projects/sch/1-mobile"
       },
       {
         name: "Skill Tree",
-        desktop: "/images/projects/sch/2-desktop.png",
-        tablet: "/images/projects/sch/2-tablet.png",
-        mobile: "/images/projects/sch/2-mobile.png"
+        desktop: "/projects/sch/2-desktop",
+        tablet: "/projects/sch/2-tablet",
+        mobile: "/projects/sch/2-mobile"
       },
       {
         name: "Other Skills",
-        desktop: "/images/projects/sch/3-desktop.png",
-        tablet: "/images/projects/sch/3-tablet.png",
-        mobile: "/images/projects/sch/3-mobile.png"
+        desktop: "/projects/sch/3-desktop",
+        tablet: "/projects/sch/3-tablet",
+        mobile: "/projects/sch/3-mobile"
       },
       {
         name: "Rotation",
-        desktop: "/images/projects/sch/4-desktop.png",
-        tablet: "/images/projects/sch/4-tablet.png",
-        mobile: "/images/projects/sch/4-mobile.png"
+        desktop: "/projects/sch/4-desktop",
+        tablet: "/projects/sch/4-tablet",
+        mobile: "/projects/sch/4-mobile"
       },
       {
         name: "Decision Making",
-        desktop: "/images/projects/sch/5-desktop.png",
-        tablet: "/images/projects/sch/5-tablet.png",
-        mobile: "/images/projects/sch/5-mobile.png"
+        desktop: "/projects/sch/5-desktop",
+        tablet: "/projects/sch/5-tablet",
+        mobile: "/projects/sch/5-mobile"
       }
     ],
     tools: ["REACT", "STYLED-COMPONENTS", "Netlify"],
@@ -140,7 +140,7 @@ const projects = [
     views: [
       {
         name: "Multi Level Highlights",
-        desktop: "/images/projects/floating-toc/1-desktop.jpg"
+        desktop: "/projects/floating-toc/1-desktop"
       }
     ],
     tools: ["Javascript", "CSS"],

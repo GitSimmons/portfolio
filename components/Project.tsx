@@ -153,6 +153,10 @@ const Carousel = ({ children, aspect }) => {
 };
 
 const Project = ({ description, lead, links, title, tools, views }) => {
+  const largeCloudinaryPreset = "f_auto";
+  const smallCloudinaryPreset = "c_scale,f_auto,h_500";
+  const largeCloudinaryBaseURL = `https://res.cloudinary.com/acloudforben/image/upload/${largeCloudinaryPreset}/v1580502179/portfolio`;
+  const smallCloudinaryBaseURL = `https://res.cloudinary.com/acloudforben/image/upload/${smallCloudinaryPreset}/v1580502179/portfolio`;
   const aspectRatios = {
     desktop: "1.79em",
     tablet: "0.77em",
@@ -186,17 +190,20 @@ const Project = ({ description, lead, links, title, tools, views }) => {
       <ImageContainer>
         {formats.map(format => (
           <Carousel aspect={aspectRatios[format]} key={aspectRatios[format]}>
-            {views.map(view => (
-              <ImageWrapper
-                ref={screenshots[view.name + format]}
-                key={view.name + view[format]}
-              >
-                <img
-                  src={view[format]}
-                  alt={"Image of " + view.name + "on" + format}
-                />
-              </ImageWrapper>
-            ))}
+            {views.map(
+              view =>
+                view[format] && (
+                  <ImageWrapper
+                    ref={screenshots[view.name + format]}
+                    key={view.name + view[format]}
+                  >
+                    <img
+                      src={largeCloudinaryBaseURL + view[format]}
+                      alt={"Image of " + view.name + "on" + format}
+                    />
+                  </ImageWrapper>
+                )
+            )}
           </Carousel>
         ))}
       </ImageContainer>
