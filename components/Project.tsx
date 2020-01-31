@@ -84,6 +84,9 @@ const ImageContainer = styled.div`
     font-size: calc((90vw / 1.78) - 0.5rem);
     div:not(:first-child) {
       display: none;
+      img {
+        display: none;
+      }
     }
   }
   /* div:not(:last-child) {
@@ -162,6 +165,11 @@ const Project = ({ description, lead, links, title, tools, views }) => {
     tablet: "0.77em",
     mobile: "0.58em"
   };
+  const aspectRatioNumbers = {
+    desktop: 1.79,
+    tablet: 0.77,
+    mobile: 0.58
+  };
   const formats = Object.keys(aspectRatios);
 
   //Create an object with refs for each format
@@ -199,6 +207,16 @@ const Project = ({ description, lead, links, title, tools, views }) => {
                   >
                     <img
                       src={largeCloudinaryBaseURL + view[format]}
+                      srcSet={`
+                        ${smallCloudinaryBaseURL +
+                          view[format]} ${aspectRatioNumbers[format] * 500}w,
+                        ${largeCloudinaryBaseURL +
+                          view[format]} ${aspectRatioNumbers[format] * 1000}w
+                      `}
+                      sizes={`
+                      (max-width: 1980px) ${aspectRatioNumbers[format] * 500}px,
+                      ${aspectRatioNumbers[format] * 1000}px
+                      `}
                       alt={"Image of " + view.name + "on" + format}
                     />
                   </ImageWrapper>
