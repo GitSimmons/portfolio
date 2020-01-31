@@ -65,7 +65,7 @@ const projects = [
     views: [
       {
         name: "Single Page App",
-        desktop: "/images/projects/ragnarok/ragnarok-desktop.png",
+        desktop: "/images/projects/ragnarok/ragnarok-desktop.jpg",
         tablet: "/images/projects/ragnarok/ragnarok-tablet.png",
         mobile: "/images/projects/ragnarok/ragnarok-mobile.png"
       }
