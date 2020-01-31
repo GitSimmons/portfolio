@@ -45,6 +45,21 @@ function Home() {
             name="Description"
             content="Ben Simmons is a full stack developer who works primarily with React, Typescript and GraphQL."
           />
+
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=%your code here%"
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments)}
+        gtag("js", new Date());
+        gtag("config", "UA-157528793-1");
+    `
+            }}
+          ></script>
         </Head>
         <Nav />
         <Hero>
