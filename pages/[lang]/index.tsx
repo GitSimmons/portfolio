@@ -6,7 +6,8 @@ import Hero from "../../components/Hero";
 import Nav from "../../components/Nav";
 import Project from "../../components/Project";
 import ToC from "../../components/ToC";
-
+import { useLocale } from "../../components/useLocale";
+import LocaleSwitcher from "../../components/LocaleSwitcher";
 import ThemeSwitcher from "../../components/ThemeSwitcher";
 import GlobalStyles from "../../components/styles/GlobalStyles";
 import { light } from "../../components/styles/themes";
@@ -19,6 +20,7 @@ const Container = styled.div`
 
 function Home() {
   const [theme, setTheme] = useState(light);
+  const { locale } = useLocale();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -59,11 +61,12 @@ function Home() {
             from Montreal, QC
           </p>
         </Hero>
+        <LocaleSwitcher />
         <div style={{ position: "relative", display: "flex" }}>
           <ToC>
             <p>Projects</p>
             <ul>
-              {projects.map(project => (
+              {projects[locale].map(project => (
                 <li key={project.title}>
                   <a href={"#" + project.title}>{project.title} </a>
                 </li>
@@ -74,7 +77,7 @@ function Home() {
             </ul>
           </ToC>
           <div id="projects">
-            {projects.map(project => (
+            {projects[locale].map(project => (
               <Project {...project} key={project.title} />
             ))}
           </div>
