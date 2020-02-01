@@ -48,7 +48,7 @@ function Home() {
 
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=%your code here%"
+            src="https://www.googletagmanager.com/gtag/js?id=UA-157528793-1"
           ></script>
           <script
             dangerouslySetInnerHTML={{
