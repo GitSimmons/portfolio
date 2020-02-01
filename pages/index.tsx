@@ -1,98 +1,34 @@
-import React, { useState } from "react";
-import styled, { ThemeProvider } from "styled-components";
+import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/dist/client/router";
 
-import Footer from "../components/Footer";
-import Hero from "../components/Hero";
-import Nav from "../components/Nav";
-import Project from "../components/Project";
-import ToC from "../components/ToC";
+enum Locale {
+  en = "en",
+  fr = "fr"
+}
+const locales: Locale[] = [Locale.en, Locale.fr];
+const isLocale = (tested: string): tested is Locale =>
+  locales.some(locale => locale === tested);
 
-import ThemeSwitcher from "../components/ThemeSwitcher";
-import GlobalStyles from "../components/styles/GlobalStyles";
-import { light } from "../components/styles/themes";
-
-import projects from "../data/projects";
-const Container = styled.div`
-  width: 90vw;
-  margin: auto;
-`;
-
-function Home() {
-  const [theme, setTheme] = useState(light);
-  const refs = projects.reduce((acc, project) => {
-    acc[project.title] = React.createRef();
-    return acc;
-  });
-  const handleClick = title =>
-    refs[title].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <ThemeSwitcher setTheme={setTheme} theme={theme} />
-      <Container>
-        <Head>
-          <title>Ben Simmons | Portfolio</title>
-          <link rel="icon" type="image/png" href="/favicon.png" />
-          <link
-            href="https://fonts.googleapis.com/css?family=Kumar+One+Outline|Roboto&display=swap"
-            rel="stylesheet"
-          />
-          <meta
-            name="Description"
-            content="Ben Simmons is a full stack developer who works primarily with React, Typescript and GraphQL."
-          />
-
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-157528793-1"
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){window.dataLayer.push(arguments)}
-        gtag("js", new Date());
-        gtag("config", "UA-157528793-1");
-    `
-            }}
-          ></script>
-        </Head>
-        <Nav />
-        <Hero>
-          <p>
-            Hi there, I'm Ben, <br />a <span>Full Stack Developer</span>
-            <br />
-            from Montreal, QC
-          </p>
-        </Hero>
-        <div style={{ position: "relative", display: "flex" }}>
-          <ToC>
-            <p>Projects</p>
-            <ul>
-              {projects.map(project => (
-                <li key={project.title}>
-                  <a href={"#" + project.title}>{project.title} </a>
-                </li>
-              ))}
-              <li>
-                <a href="#">Back to Top</a>
-              </li>
-            </ul>
-          </ToC>
-          <div id="projects">
-            {projects.map(project => (
-              <Project {...project} key={project.title} />
-            ))}
-          </div>
-        </div>
-        <Footer />
-      </Container>
-    </ThemeProvider>
-  );
+export function getInitialLocale(): Locale {
+  // the language setting of the browser
+  const [browserSetting] = navigator.language.split("-");
+  if (isLocale(browserSetting)) {
+    return browserSetting;
+  }
+  return Locale.en;
 }
 
-export default Home;
+const Index: React.FC = () => {
+  const router = useRouter();
+  React.useEffect(() => {
+    router.replace("/[lang]", `/${getInitialLocale()}`);
+  });
+  return (
+    <Head>
+      <meta name="robots" content="noindex, nofollow" />
+    </Head>
+  );
+};
+
+export default Index;
