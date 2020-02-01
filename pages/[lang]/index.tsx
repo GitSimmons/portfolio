@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Head from "next/head";
-
 import Footer from "../../components/Footer";
 import Hero from "../../components/Hero";
 import Nav from "../../components/Nav";
@@ -20,15 +19,6 @@ const Container = styled.div`
 
 function Home() {
   const [theme, setTheme] = useState(light);
-  const refs = projects.reduce((acc, project) => {
-    acc[project.title] = React.createRef();
-    return acc;
-  });
-  const handleClick = title =>
-    refs[title].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
