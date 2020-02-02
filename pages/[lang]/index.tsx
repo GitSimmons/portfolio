@@ -6,7 +6,8 @@ import Hero from "../../components/Hero";
 import Nav from "../../components/Nav";
 import Project from "../../components/Project";
 import ToC from "../../components/ToC";
-import { useLocale } from "../../components/useLocale";
+// import useLocale from "../../components/useLocale";
+import useTranslation from "../../components/useTranslation";
 import LocaleSwitcher from "../../components/LocaleSwitcher";
 import ThemeSwitcher from "../../components/ThemeSwitcher";
 import GlobalStyles from "../../components/styles/GlobalStyles";
@@ -20,7 +21,7 @@ const Container = styled.div`
 
 function Home() {
   const [theme, setTheme] = useState(light);
-  const { locale } = useLocale();
+  const { t, locale } = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
@@ -56,15 +57,16 @@ function Home() {
         <Nav />
         <Hero>
           <p>
-            Hi there, I'm Ben, <br />a <span>Full Stack Developer</span>
+            {t("header1")} <br />
+            {t("header2")} <span>{t("headerTitle")} </span>
             <br />
-            from Montreal, QC
+            {t("header3")}
           </p>
         </Hero>
         <LocaleSwitcher />
         <div style={{ position: "relative", display: "flex" }}>
           <ToC>
-            <p>Projects</p>
+            <p>{t("projects")}</p>
             <ul>
               {projects[locale].map(project => (
                 <li key={project.title}>
@@ -72,7 +74,7 @@ function Home() {
                 </li>
               ))}
               <li>
-                <a href="#">Back to Top</a>
+                <a href="#">{t("top")}</a>
               </li>
             </ul>
           </ToC>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import useTranslation from "./useTranslation";
+
 const StyledNav = styled.div`
   display: flex;
   justify-content: space-between;
@@ -40,6 +42,7 @@ const StyledNavLinks = styled.ul`
 `;
 
 const Nav = () => {
+  const { t } = useTranslation();
   return (
     <StyledNav>
       <Link href="/">
@@ -48,18 +51,18 @@ const Nav = () => {
       <StyledNavLinks>
         <li>
           <Link href="#about">
-            <a>About</a>
+            <a>{t("about")}</a>
           </Link>
         </li>
 
         <li>
           <Link href="#projects">
-            <a>Portfolio</a>
+            <a>{t("portfolio")}</a>
           </Link>
         </li>
         <li>
           <Link href="#contact">
-            <a>Contact</a>
+            <a>{t("contact")}</a>
           </Link>
         </li>
       </StyledNavLinks>
