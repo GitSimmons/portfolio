@@ -4,7 +4,7 @@ const projects = {
       title: "Antique Store",
       views: [
         {
-          name: "Landing",
+          name: "Home",
           desktop: "/projects/auntsadies/1-desktop",
           tablet: "/projects/auntsadies/1-tablet",
           mobile: "/projects/auntsadies/1-mobile"
@@ -164,43 +164,43 @@ const projects = {
       title: "Magasin D'Antiquités",
       views: [
         {
-          name: "Landing",
+          name: "Accueil",
           desktop: "/projects/auntsadies/1-desktop",
           tablet: "/projects/auntsadies/1-tablet",
           mobile: "/projects/auntsadies/1-mobile"
         },
         {
-          name: "Cart",
+          name: "Panier",
           desktop: "/projects/auntsadies/2-desktop",
           tablet: "/projects/auntsadies/2-tablet",
           mobile: "/projects/auntsadies/2-mobile"
         },
         {
-          name: "Item Cards",
+          name: "Cartes",
           desktop: "/projects/auntsadies/3-desktop",
           tablet: "/projects/auntsadies/3-tablet",
           mobile: "/projects/auntsadies/3-mobile"
         },
         {
-          name: "Editing CMS",
+          name: "CMS",
           desktop: "/projects/auntsadies/4-desktop",
           tablet: "/projects/auntsadies/4-tablet",
           mobile: "/projects/auntsadies/4-mobile"
         },
         {
-          name: "Gallery",
+          name: "Gallerie",
           desktop: "/projects/auntsadies/5-desktop",
           tablet: "/projects/auntsadies/5-tablet",
           mobile: "/projects/auntsadies/5-mobile"
         },
         {
-          name: "Login",
+          name: "Connecter",
           desktop: "/projects/auntsadies/6-desktop",
           tablet: "/projects/auntsadies/6-tablet",
           mobile: "/projects/auntsadies/6-mobile"
         },
         {
-          name: "Stripe Checkout",
+          name: "Paiement Stripe",
           desktop: "/projects/auntsadies/7-desktop",
           tablet: "/projects/auntsadies/7-tablet",
           mobile: "/projects/auntsadies/7-mobile"
@@ -222,10 +222,10 @@ const projects = {
       links: [{ name: "Contact me for demo links" }]
     },
     {
-      title: "Ragnarok MVP Tracker",
+      title: "Ragnarok MVP",
       views: [
         {
-          name: "Single Page App",
+          name: "Accueil",
           desktop: "/projects/ragnarok/ragnarok-desktop",
           tablet: "/projects/ragnarok/ragnarok-tablet",
           mobile: "/projects/ragnarok/ragnarok-mobile"
@@ -243,7 +243,7 @@ const projects = {
       lead: `Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.`,
       description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. Sorry the backend GH is currently available. Chrome + Puppetteer for AWS lambda doesn't align perfectly with running it locally, and the secrets are setup in a strange way. I'll work on getting a local-friendly version up soon!`,
       links: [
-        { name: "LIVE SITE", href: "https://r0mvptracker.now.sh/" },
+        { name: "LIVE", href: "https://r0mvptracker.now.sh/" },
         {
           name: "Front-end Github",
           href: "https://github.com/GitSimmons/r0mvptracker"
@@ -252,22 +252,22 @@ const projects = {
       ]
     },
     {
-      title: "Scholar Guide",
+      title: "Guide d'Érudit",
       views: [
         {
-          name: "Landing Page",
+          name: "Accueil",
           desktop: "/projects/sch/1-desktop",
           tablet: "/projects/sch/1-tablet",
           mobile: "/projects/sch/1-mobile"
         },
         {
-          name: "Skill Tree",
+          name: "Arbre de compétences",
           desktop: "/projects/sch/2-desktop",
           tablet: "/projects/sch/2-tablet",
           mobile: "/projects/sch/2-mobile"
         },
         {
-          name: "Other Skills",
+          name: "Actions",
           desktop: "/projects/sch/3-desktop",
           tablet: "/projects/sch/3-tablet",
           mobile: "/projects/sch/3-mobile"
@@ -279,7 +279,7 @@ const projects = {
           mobile: "/projects/sch/4-mobile"
         },
         {
-          name: "Decision Making",
+          name: "Décisions",
           desktop: "/projects/sch/5-desktop",
           tablet: "/projects/sch/5-tablet",
           mobile: "/projects/sch/5-mobile"
@@ -289,7 +289,7 @@ const projects = {
       lead: `While most game guides for Final Fantasy XIV are distributed as unstyled google docs, Sovasin Kair distributed his with a stunning design as a png image. Unfortunately, due to it's enormous size, it was difficult to use effectively. I offered to transform his design into a single page site that could be viewed as easily on mobile as on desktop.`,
       description: "",
       links: [
-        { name: "LIVE SITE", href: "https://sch-sovas.netlify.com/" },
+        { name: "Live", href: "https://sch-sovas.netlify.com/" },
         {
           name: "Github",
           href: "https://github.com/GitSimmons/sch.sovas"
@@ -297,10 +297,10 @@ const projects = {
       ]
     },
     {
-      title: "Confluence Floating ToC",
+      title: "Confluence ToC Floatant",
       views: [
         {
-          name: "Multi Level Highlights",
+          name: "Souligne à plusieurs niveaux",
           desktop: "/projects/floating-toc/1-desktop"
         }
       ],
@@ -309,7 +309,7 @@ const projects = {
       description: "",
       links: [
         {
-          name: "View on Code Pen",
+          name: "Code Pen",
           href: "https://codepen.io/SimmonsPen/full/yLBwBLN"
         },
         {
