@@ -13,3 +13,5 @@ export const useLocale = () => {
   }, [lang, locale]);
   return { locale };
 };
+
+export default useLocale;
