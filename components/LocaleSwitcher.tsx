@@ -33,7 +33,7 @@ const LocaleSwitcher = () => {
       {locales
         .filter(testLocale => testLocale !== locale)
         .map(locale => (
-          <LocaleButton onClick={() => router.push(`/${locale}`)}>
+          <LocaleButton key={locale} onClick={() => router.push(`/${locale}`)}>
             {locale}
           </LocaleButton>
         ))}
