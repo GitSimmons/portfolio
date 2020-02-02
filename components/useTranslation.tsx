@@ -1,4 +1,5 @@
 import { useLocale } from "./useLocale";
+import { defaultLocale } from "../data/locales";
 import text from "../data/text";
 
 // Returns a function that grabs translation text from data/text by key based on current locale.
@@ -13,7 +14,7 @@ export const useTranslation = () => {
     if (!text[textTitle][locale]) {
       console.warn(`No translation is available in ${locale} for ${textTitle}`);
     }
-    return text[textTitle][locale];
+    return text[textTitle][locale] || text[textTitle][defaultLocale] || "";
   };
   return { t, locale };
 };
