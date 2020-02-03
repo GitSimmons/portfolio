@@ -59,7 +59,10 @@ const projects = {
       lead: `As an homage to my previous emploment at an antique store, I wanted my first ambitious project to mirror my dreams of a web store while I was working there. An e-shop complete with a CMS for CRUD operations, user permissions, stripe checkout, authentication, search, and so much more.`,
       description: `
     With the backend largely based off Wes Bos' Advanced React course, I added my own touches by using some of (at the time) the latest React features such as React Hooks and implementing some nice front-end components such as a carousel for the item listings(inspired by AirBNB) and a gallery for a more detailed view (inspired by Sotheby's galleries for antiques). There's still plenty I'd like to add to this site, but for now I'm using the lessons learned from it on other projects.`,
-      links: [{ name: "Contact me for demo links" }]
+      links: [
+        { name: "Contact me for demo links" },
+        { name: "Github", href: "https://github.com/GitSimmons/antiquestore" }
+      ]
     },
     {
       title: "Ragnarok MVP Tracker",
@@ -219,7 +222,10 @@ const projects = {
       lead: `As an homage to my previous emploment at an antique store, I wanted my first ambitious project to mirror my dreams of a web store while I was working there. An e-shop complete with a CMS for CRUD operations, user permissions, stripe checkout, authentication, search, and so much more.`,
       description: `
     With the backend largely based off Wes Bos' Advanced React course, I added my own touches by using some of (at the time) the latest React features such as React Hooks and implementing some nice front-end components such as a carousel for the item listings(inspired by AirBNB) and a gallery for a more detailed view (inspired by Sotheby's galleries for antiques). There's still plenty I'd like to add to this site, but for now I'm using the lessons learned from it on other projects.`,
-      links: [{ name: "Contact me for demo links" }]
+      links: [
+        { name: "Contact me for demo links" },
+        { name: "Github", href: "https://github.com/GitSimmons/antiquestore" }
+      ]
     },
     {
       title: "Ragnarok MVP",
@@ -300,7 +306,7 @@ const projects = {
       title: "Confluence ToC Floatant",
       views: [
         {
-          name: "Souligne à plusieurs niveaux",
+          name: "Souligne plusieurs niveaux",
           desktop: "/projects/floating-toc/1-desktop"
         }
       ],
