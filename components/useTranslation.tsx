@@ -8,12 +8,6 @@ import text from "../data/text";
 export const useTranslation = () => {
   const { locale } = useLocale();
   const t = (textTitle: string) => {
-    if (!text[textTitle]) {
-      console.warn(`No text string is available under title ${textTitle}`);
-    }
-    if (!text[textTitle][locale]) {
-      console.warn(`No translation is available in ${locale} for ${textTitle}`);
-    }
     return text[textTitle][locale] || text[textTitle][defaultLocale] || "";
   };
   return { t, locale };
