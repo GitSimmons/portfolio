@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "code:check": "yarn code:lint; yarn code:format --check",
+    "code:clean": "yarn code:lint --fix; yarn code:format --write",
+    "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
+    "code:format": "prettier './src/**/**.{js,jsx,ts,tsx}'",
+    "code:check:rules": "eslint --print-config .eslintrc.js | eslint-config-prettier-check"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +26,7 @@
   "devDependencies": {
     "@types/node": "^13.1.8",
     "@types/react": "^16.9.17",
+    "poetic": "^1.4.0",
     "typescript": "^3.7.5"
   }
 }

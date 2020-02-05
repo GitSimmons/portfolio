@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
-import { ProjectInterface } from '../data/projects'
+import { Project } from '../data/projects'
 
 const StyledProject = styled.div`
-  background-image: ${props => props.theme.colors.gradient};
+  background-image: ${(props): string => props.theme.colors.gradient};
   margin-top: 1rem;
-  color: ${props => props.theme.colors.textColor};
+  color: ${(props): string => props.theme.colors.textColor};
   padding: 1rem;
   header {
     display: flex;
@@ -21,7 +21,6 @@ const StyledProject = styled.div`
     @media (min-width: 900px) {
       font-size: 3.5rem;
     }
-    /* text-transform: uppercase; */
     font-family: "Kumar One Outline", cursive;
   }
   header:after {
@@ -30,12 +29,13 @@ const StyledProject = styled.div`
     display: inline-block;
     height: 0.1rem;
     margin-left: 1rem;
-    background-color: ${props => props.theme.colors.textColor};
+    background-color: ${(props): string => props.theme.colors.textColor};
   }
   a,
-  span {
+  span, button {
+    background-color: ${(props): string => props.theme.colors.background};
     text-decoration: none;
-    color: ${props => props.theme.colors.buttonColor};
+    color: ${(props): string => props.theme.colors.buttonColor};
     cursor: pointer;
     &:hover {
       text-decoration: underline;
@@ -48,7 +48,7 @@ const StyledProject = styled.div`
   ul {
     text-transform: uppercase;
     list-style-type: none;
-    color: ${props => props.theme.colors.inactiveColor};
+    color: ${(props): string => props.theme.colors.inactiveColor};
     padding-inline-start: 0px;
 
     li {
@@ -67,7 +67,7 @@ const StyledProject = styled.div`
    scale images to height=1em and w=(aspectRatio)em. Here's how we derive our maximum font-size.
    With aspect ratios of [1.79, 0.77, 0.58] we have a sum of 3.14, which means that for 100 vw,
    we would have (100/3.14)=~31vw as a max height.
-   The container is 90vw - width of the table of contents, and has padding of 1rem on each side 
+   The container is 90vw - width of the table of contents, and has padding of 1rem on each side
    and ideally two flex gutters of ~0.5rem between the three carousels.
 
    Incidentally, for media breakpoints, images with a height of 500px will work well up until
@@ -89,21 +89,18 @@ const ImageContainer = styled.div`
       }
     }
   }
-  /* div:not(:last-child) {
-    margin-right: 0.5rem;
-  } */
 `;
 const ScrollBarHider = styled.div`
   --scrollbar_width: 9px;
   height: 1em;
-  width: ${props =>
+  width: ${(props): string =>
     props.aspect ? `calc(${props.aspect} - var(--scrollbar_width))` : '100%'};
   overflow: hidden;
 `;
 const StyledImageCarousel = styled.div`
   height: 100%;
   position: relative;
-  width: ${props =>
+  width: ${(props): string =>
     props.aspect ? `calc(${props.aspect} + var(--scrollbar_width))` : '100%'};
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -124,7 +121,7 @@ const StyledDescriptionWrapper = styled.div`
     padding: 1rem 0rem;
   }
   p {
-    display: ${props => (props.visible ? 'block' : 'none')};
+    display: ${(props): string => (props.visible ? 'block' : 'none')};
   }
   @media (min-width: 768px) {
     span {
@@ -135,19 +132,25 @@ const StyledDescriptionWrapper = styled.div`
     }
   }
 `;
-const DescriptionWrapper = ({ children }) => {
+const DescriptionWrapper: React.FC = ({ children }: { children: React.ReactNode }) => {
   const [visible, setVisible] = useState(false);
   return (
     <StyledDescriptionWrapper visible={visible}>
-      <span onClick={() => setVisible(!visible)}>
+      <button type="button" onClick={(): void => setVisible(!visible)}>
         read {visible ? 'less ( - )' : 'more ( + )'}
         <br />
-      </span>
+      </button>
       <p>{children}</p>
     </StyledDescriptionWrapper>
   );
 };
-const Carousel = ({ children, aspect }) => {
+
+type CarouselProps = {
+  children: React.ReactNode,
+  aspect: string
+}
+
+const Carousel: React.FC<CarouselProps> = ({ children, aspect }: CarouselProps) => {
   return (
     <ScrollBarHider aspect={aspect}>
       <StyledImageCarousel aspect={aspect}>{children}</StyledImageCarousel>
@@ -155,9 +158,9 @@ const Carousel = ({ children, aspect }) => {
   );
 };
 
-const Project = ({
+const ProjectComponent: React.FC<Project> = ({
   description, lead, links, title, tools, views
-}: ProjectInterface) => {
+}: Project) => {
   const largeCloudinaryPreset = 'f_auto';
   const smallCloudinaryPreset = 'c_scale,f_auto,h_500';
   const largeCloudinaryBaseURL = `https://res.cloudinary.com/acloudforben/image/upload/${largeCloudinaryPreset}/v1580502179/portfolio`;
@@ -177,10 +180,10 @@ const Project = ({
   // Create an object with refs for each format
   const screenshots = views.reduce((acc, value) => {
     // eslint-disable-next-line no-return-assign
-    formats.map((format) => (acc[value.name + format] = React.createRef()));
+    formats.map((format) => (acc[value.name + format] = React.createRef<HTMLElement | null>()));
     return acc;
   }, {});
-  const handleClick = (name: string) => {
+  const handleClick = (name: string): void => {
     // For each view, scroll the parent container of a given screenshot to the screenshot's ref.
     formats.map((format) => {
       // A quick polyfill for Edge
@@ -200,10 +203,10 @@ const Project = ({
         <h3>{title}</h3>
       </header>
       <ImageContainer>
-        {formats.map(format => (
+        {formats.map((format) => (
           <Carousel aspect={aspectRatios[format]} key={aspectRatios[format]}>
             {views.map(
-              view =>
+              (view) =>
                 view[format] && (
                   <ImageWrapper
                     ref={screenshots[view.name + format]}
@@ -221,7 +224,7 @@ const Project = ({
                       (max-width: 1980px) ${aspectRatioNumbers[format] * 500}px,
                       ${aspectRatioNumbers[format] * 1000}px
                       `}
-                      alt={'Image of ' + view.name + 'on' + format}
+                      alt={`${view.name}on${format}`}
                     />
                   </ImageWrapper>
                 )
@@ -230,13 +233,13 @@ const Project = ({
         ))}
       </ImageContainer>
       <ul>
-        {views.map(view => (
+        {views.map((view) => (
           <li key={view.name}>
-            <span onClick={() => handleClick(view.name)}>{view.name}</span>
+            <button type="button" onClick={(): void => handleClick(view.name)}>{view.name}</button>
           </li>
         ))}
       </ul>
-      <ul>{tools && tools.map(tool => <li key={tool}>{tool}</li>)}</ul>
+      <ul>{tools && tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
       <h4>Description</h4>
       <p>{lead}</p>
 
@@ -244,10 +247,10 @@ const Project = ({
       <h4>Links</h4>
       <ul>
         {links &&
-          links.map(link => (
+          links.map((link) => (
             <li key={link.name}>
               {link.href ? (
-                <a href={link.href} target="_blank" rel="noopener">
+                <a href={link.href} target="_blank" rel="noopener noreferrer">
                   {link.name}
                 </a>
               ) : (
@@ -259,4 +262,4 @@ const Project = ({
     </StyledProject>
   );
 };
-export default Project;
+export default ProjectComponent;

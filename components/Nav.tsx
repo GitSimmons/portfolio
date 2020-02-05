@@ -1,6 +1,7 @@
-import Link from "next/link";
-import styled from "styled-components";
-import useTranslation from "./useTranslation";
+import React from 'react'
+import Link from 'next/link';
+import styled from 'styled-components';
+import useTranslation from './useTranslation';
 
 const StyledNav = styled.div`
   display: flex;
@@ -9,17 +10,17 @@ const StyledNav = styled.div`
   font-size: 16px;
   text-transform: uppercase;
   padding: 1rem;
-  color: ${props => props.theme.colors.textColor};
-  background-color: ${props => props.theme.colors.background};
+  color: ${(props): string => props.theme.colors.textColor};
+  background-color: ${(props): string => props.theme.colors.background};
   a {
     text-decoration: none;
-    color: ${props => props.theme.colors.textColor};
+    color: ${(props): string => props.theme.colors.textColor};
     display: block;
     text-align: center;
     transition: all 0.2s ease;
   }
   a:hover {
-    color: ${props => props.theme.colors.buttonColor};
+    color: ${(props): string => props.theme.colors.buttonColor};
   }
   @media (max-width: 768px) {
     a:last-child {
@@ -41,33 +42,33 @@ const StyledNavLinks = styled.ul`
   }
 `;
 
-const Nav = () => {
+const Nav: React.FC = () => {
   const { t } = useTranslation();
   return (
     <StyledNav>
       <Link href="/">
-        <a>Ben Simmons</a>
+        <a href="/">Ben Simmons</a>
       </Link>
       <StyledNavLinks>
         <li>
           <Link href="#about">
-            <a>{t("about")}</a>
+            <a href="#about">{t('about')}</a>
           </Link>
         </li>
 
         <li>
           <Link href="#projects">
-            <a>{t("portfolio")}</a>
+            <a href="#projects">{t('portfolio')}</a>
           </Link>
         </li>
         <li>
           <Link href="#contact">
-            <a>{t("contact")}</a>
+            <a href="#contact">{t('contact')}</a>
           </Link>
         </li>
       </StyledNavLinks>
       <Link href="https://github.com/GitSimmons/">
-        <a>Github</a>
+        <a href="https://github.com/GitSimmons/">Github</a>
       </Link>
     </StyledNav>
   );

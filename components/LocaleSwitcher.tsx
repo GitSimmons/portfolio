@@ -1,9 +1,9 @@
-import router from "next/router";
-import styled from "styled-components";
-import { useLocale } from "./useLocale";
-import { locales } from "../data/locales";
+import router from 'next/router';
+import styled from 'styled-components';
+import { useLocale } from './useLocale';
+import { locales } from '../data/locales';
 
-const LocaleButton = styled.div`
+const LocaleButton = styled.button`
   position: fixed;
   right: 0.5rem;
   top: calc(1rem + 32px + 5px);
@@ -11,8 +11,8 @@ const LocaleButton = styled.div`
   font-size: 16px;
   z-index: 1;
   cursor: pointer;
-  color: ${props => props.theme.colors.textColor};
-  background: ${props => props.theme.colors.gradient};
+  color: ${(props): string => props.theme.colors.textColor};
+  background: ${(props): string => props.theme.colors.gradient};
   background-size: 32px 32px;
   width: 32px;
   height: 32px;
@@ -20,20 +20,21 @@ const LocaleButton = styled.div`
   display: flex;
   justify-content: center;
   transition: all 0.2s ease;
+  outline: none;
 
   &:hover {
-    background: ${props => props.theme.colors.gradientEndColor};
+    background: ${(props): string => props.theme.colors.gradientEndColor};
   }
 `;
 
-const LocaleSwitcher = () => {
-  const { locale } = useLocale();
+const LocaleSwitcher: React.FC = () => {
+  const { locale: currentLocale } = useLocale();
   return (
     <>
       {locales
-        .filter(testLocale => testLocale !== locale)
-        .map(locale => (
-          <LocaleButton key={locale} onClick={() => router.push(`/${locale}`)}>
+        .filter((testLocale) => testLocale !== currentLocale)
+        .map((locale) => (
+          <LocaleButton key={locale} onClick={(): Promise<boolean> => router.push(`/${locale}`)}>
             {locale}
           </LocaleButton>
         ))}

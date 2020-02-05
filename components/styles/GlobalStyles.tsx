@@ -1,4 +1,5 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
+
 const GlobalStyle = createGlobalStyle`
   html {
       box-sizing: border-box;
@@ -13,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   body {
       padding: 0;
       margin: 0;
-      background-color: ${props => props.theme.colors.background};
+      background-color: ${(props): string => props.theme.colors.background};
       font-family: 'Roboto', Arial,Helvetica,sans-serif;
       font-size: 14px;
       line-height: 1.5

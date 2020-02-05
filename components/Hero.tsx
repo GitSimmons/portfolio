@@ -1,9 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
 const StyledHero = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.textColor};
-  background-image: ${props => props.theme.colors.gradient};
+  color: ${(props): string => props.theme.colors.textColor};
+  background-image: ${(props): string => props.theme.colors.gradient};
   padding: 1rem;
   margin-bottom: 1rem;
   font-weight: 900;
@@ -12,10 +13,10 @@ const StyledHero = styled.div`
     font-size: 4rem;
   }
   span {
-    color: ${props => props.theme.colors.buttonColor};
+    color: ${(props): string => props.theme.colors.buttonColor};
   }
 `;
-const Hero = ({ children }) => (
+const Hero: React.FC = ({ children }: { children: React.ReactNode }) => (
   <StyledHero>
     <div id="about">{children}</div>
   </StyledHero>

@@ -1,7 +1,8 @@
-import styled from "styled-components";
-import { light, dark } from "./styles/themes";
+import React from 'react'
+import styled from 'styled-components';
+import { light, dark, Theme } from './styles/themes';
 
-const ThemeButton = styled.div`
+const ThemeButton = styled.button`
   position: fixed;
   right: 0.5rem;
   top: 1rem;
@@ -9,7 +10,7 @@ const ThemeButton = styled.div`
   font-size: 16px;
   z-index: 1;
   cursor: pointer;
-  background: ${props => props.theme.colors.gradient};
+  background: ${(props): string => props.theme.colors.gradient};
   background-size: 32px 32px;
   width: 32px;
   height: 32px;
@@ -17,14 +18,20 @@ const ThemeButton = styled.div`
   display: flex;
   justify-content: center;
   transition: all 0.2s ease;
+  outline: none;
 
   &:hover {
-    background: ${props => props.theme.colors.gradientEndColor};
+    background: ${(props): string => props.theme.colors.gradientEndColor};
   }
 `;
 
-const ThemeSwitcher = ({ setTheme, theme }) => {
-  const handleClick = () => {
+type ThemeSwitcherProps = {
+  setTheme: (theme: Theme) => void,
+  theme: Theme
+}
+
+const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ setTheme, theme }: ThemeSwitcherProps) => {
+  const handleClick: () => void = () => {
     if (theme === light) {
       setTheme(dark);
     } else {
@@ -32,8 +39,8 @@ const ThemeSwitcher = ({ setTheme, theme }) => {
     }
   };
   return (
-    <ThemeButton>
-      <span onClick={() => handleClick()}> {theme === dark ? `🌙` : `☀️`}</span>
+    <ThemeButton type="button" onClick={(): void => handleClick()}>
+      {theme === dark ? `🌙` : `☀️`}
     </ThemeButton>
   );
 };

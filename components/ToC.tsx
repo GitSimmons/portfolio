@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledToC = styled.div`
   position: sticky;
@@ -9,7 +9,7 @@ const StyledToC = styled.div`
   font-size: 1rem;
   /* text-align: right; */
   p {
-    color: ${props => props.theme.colors.textColor};
+    color: ${(props): string => props.theme.colors.textColor};
   }
   ul {
     list-style: none;
@@ -18,7 +18,7 @@ const StyledToC = styled.div`
     padding-top: 1rem;
   }
   a {
-    color: ${props => props.theme.colors.buttonColor};
+    color: ${(props): string => props.theme.colors.buttonColor};
     text-decoration: none;
     &:hover {
       text-decoration: underline;
@@ -30,7 +30,7 @@ const StyledToC = styled.div`
   }
   min-width: 225px;
 `;
-const ToC = ({ children }) => {
+const ToC: React.FC = ({ children }: { children: React.ReactNode }) => {
   return <StyledToC>{children}</StyledToC>;
 };
 
