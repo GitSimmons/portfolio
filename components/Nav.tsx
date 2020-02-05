@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import useTranslation from './useTranslation';
@@ -67,8 +67,10 @@ const Nav: React.FC = () => {
           </Link>
         </li>
       </StyledNavLinks>
-      <Link href="https://github.com/GitSimmons/" >
-        <a href="https://github.com/GitSimmons/" target="_blank" rel="noopener noreferrer">Github</a>
+      <Link href="https://github.com/GitSimmons/">
+        <a href="https://github.com/GitSimmons/" target="_blank" rel="noopener noreferrer">
+          Github
+        </a>
       </Link>
     </StyledNav>
   );
