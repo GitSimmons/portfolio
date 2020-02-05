@@ -67,8 +67,8 @@ const Nav: React.FC = () => {
           </Link>
         </li>
       </StyledNavLinks>
-      <Link href="https://github.com/GitSimmons/">
-        <a href="https://github.com/GitSimmons/">Github</a>
+      <Link href="https://github.com/GitSimmons/" >
+        <a href="https://github.com/GitSimmons/" target="_blank" rel="noopener noreferrer">Github</a>
       </Link>
     </StyledNav>
   );
