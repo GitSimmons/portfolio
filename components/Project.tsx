@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
-import { Project } from '../data/projects'
+import { Project } from '../data/projects';
 
 const StyledProject = styled.div`
   background-image: ${(props): string => props.theme.colors.gradient};
@@ -21,10 +21,10 @@ const StyledProject = styled.div`
     @media (min-width: 900px) {
       font-size: 3.5rem;
     }
-    font-family: "Kumar One Outline", cursive;
+    font-family: 'Kumar One Outline', cursive;
   }
   header:after {
-    content: "";
+    content: '';
     flex: auto;
     display: inline-block;
     height: 0.1rem;
@@ -32,7 +32,8 @@ const StyledProject = styled.div`
     background-color: ${(props): string => props.theme.colors.textColor};
   }
   a,
-  span, button {
+  span,
+  button {
     background-color: ${(props): string => props.theme.colors.background};
     text-decoration: none;
     color: ${(props): string => props.theme.colors.buttonColor};
@@ -55,7 +56,7 @@ const StyledProject = styled.div`
       display: inline-block;
       &:not(:last-child) {
         &:after {
-          content: "/";
+          content: '/';
           margin: 0 0.5rem;
         }
       }
@@ -146,9 +147,9 @@ const DescriptionWrapper: React.FC = ({ children }: { children: React.ReactNode 
 };
 
 type CarouselProps = {
-  children: React.ReactNode,
-  aspect: string
-}
+  children: React.ReactNode;
+  aspect: string;
+};
 
 const Carousel: React.FC<CarouselProps> = ({ children, aspect }: CarouselProps) => {
   return (
@@ -159,7 +160,12 @@ const Carousel: React.FC<CarouselProps> = ({ children, aspect }: CarouselProps) 
 };
 
 const ProjectComponent: React.FC<Project> = ({
-  description, lead, links, title, tools, views
+  description,
+  lead,
+  links,
+  title,
+  tools,
+  views,
 }: Project) => {
   const largeCloudinaryPreset = 'f_auto';
   const smallCloudinaryPreset = 'c_scale,f_auto,h_500';
@@ -168,12 +174,12 @@ const ProjectComponent: React.FC<Project> = ({
   const aspectRatios = {
     desktop: '1.79em',
     tablet: '0.77em',
-    mobile: '0.58em'
+    mobile: '0.58em',
   };
   const aspectRatioNumbers = {
     desktop: 1.79,
     tablet: 0.77,
-    mobile: 0.58
+    mobile: 0.58,
   };
   const formats = Object.keys(aspectRatios);
 
@@ -215,10 +221,10 @@ const ProjectComponent: React.FC<Project> = ({
                     <img
                       src={largeCloudinaryBaseURL + view[format]}
                       srcSet={`
-                        ${smallCloudinaryBaseURL +
-                        view[format]} ${aspectRatioNumbers[format] * 500}w,
-                        ${largeCloudinaryBaseURL +
-                        view[format]} ${aspectRatioNumbers[format] * 1000}w
+                        ${smallCloudinaryBaseURL + view[format]} ${aspectRatioNumbers[format] *
+                        500}w,
+                        ${largeCloudinaryBaseURL + view[format]} ${aspectRatioNumbers[format] *
+                        1000}w
                       `}
                       sizes={`
                       (max-width: 1980px) ${aspectRatioNumbers[format] * 500}px,
@@ -227,7 +233,7 @@ const ProjectComponent: React.FC<Project> = ({
                       alt={`${view.name}on${format}`}
                     />
                   </ImageWrapper>
-                )
+                ),
             )}
           </Carousel>
         ))}
@@ -235,7 +241,9 @@ const ProjectComponent: React.FC<Project> = ({
       <ul>
         {views.map((view) => (
           <li key={view.name}>
-            <button type="button" onClick={(): void => handleClick(view.name)}>{view.name}</button>
+            <button type="button" onClick={(): void => handleClick(view.name)}>
+              {view.name}
+            </button>
           </li>
         ))}
       </ul>

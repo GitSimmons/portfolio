@@ -1,3 +1,5 @@
+import { Locale } from './locales';
+
 export interface View {
   name: string;
   desktop?: string;
@@ -18,8 +20,8 @@ export interface Project {
 }
 
 const projects: {
-  en: Project[];
-  fr: Project[];
+  [Locale.en]: Project[];
+  [Locale.fr]: Project[];
 } = {
   en: [
     {
