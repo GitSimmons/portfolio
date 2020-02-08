@@ -35,7 +35,6 @@ const StyledProject = styled.div`
   span,
   button {
     text-transform: uppercase;
-
     background-color: ${(props): string => props.theme.colors.background};
     text-decoration: none;
     color: ${(props): string => props.theme.colors.buttonColor};
@@ -78,7 +77,7 @@ const StyledProject = styled.div`
    but for a 2560x1440 and 3840 x 2160, we will likely need 1000px height, for a max
    width of 3140px. A 90vw container on 3840 is 3456 px, and an 80vw would be 3072px.
 */
-const ImageContainer = styled.div`
+const ScrollerContainer = styled.div`
   font-size: calc(((90vw - 225px) / 3.14) - 0.5rem);
   margin-bottom: 0.3rem;
   display: flex;
@@ -100,7 +99,7 @@ const ScrollBarHider = styled.div`
     props.aspect ? `calc(${props.aspect} - var(--scrollbar_width))` : '100%'};
   overflow: hidden;
 `;
-const StyledImageCarousel = styled.div`
+const StyledImageScroller = styled.div`
   height: 100%;
   position: relative;
   width: ${(props): string =>
@@ -109,7 +108,7 @@ const StyledImageCarousel = styled.div`
   scroll-snap-type: y mandatory;
   scroll-behavior: auto;
 `;
-const ImageWrapper = styled.section`
+const ImageWrapper = styled.div`
   scroll-snap-align: start;
   pointer-events: none;
   img {
@@ -120,15 +119,15 @@ const ImageWrapper = styled.section`
 `;
 
 
-type CarouselProps = {
+type ImageScrollerProps = {
   children: React.ReactNode;
   aspect: string;
 };
 
-const Carousel: React.FC<CarouselProps> = ({ children, aspect }: CarouselProps) => {
+const ImageScroller: React.FC<ImageScrollerProps> = ({ children, aspect }: ImageScrollerProps) => {
   return (
     <ScrollBarHider aspect={aspect}>
-      <StyledImageCarousel aspect={aspect}>{children}</StyledImageCarousel>
+      <StyledImageScroller aspect={aspect}>{children}</StyledImageScroller>
     </ScrollBarHider>
   );
 };
@@ -182,9 +181,9 @@ const ProjectComponent: React.FC<Project> = ({
       <header id={title}>
         <h3>{title}</h3>
       </header>
-      <ImageContainer>
+      <ScrollerContainer>
         {formats.map((format) => (
-          <Carousel aspect={aspectRatios[format]} key={aspectRatios[format]}>
+          <ImageScroller aspect={aspectRatios[format]} key={aspectRatios[format]}>
             {views.map(
               (view) =>
                 view[format] && (
@@ -207,11 +206,11 @@ const ProjectComponent: React.FC<Project> = ({
                       alt={`${view.name}on${format}`}
                     />
                   </ImageWrapper>
-                ),
+                )
             )}
-          </Carousel>
+          </ImageScroller>
         ))}
-      </ImageContainer>
+      </ScrollerContainer>
       <ul>
         {views.map((view) => (
           <li key={view.name}>
