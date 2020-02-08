@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React, { useState } from 'react';
 import { Project } from '../data/projects';
-
+import Description from './Description'
 const StyledProject = styled.div`
   background-image: ${(props): string => props.theme.colors.gradient};
   margin-top: 1rem;
@@ -116,35 +116,7 @@ const ImageWrapper = styled.section`
     display: block;
   }
 `;
-const StyledDescriptionWrapper = styled.div`
-  span {
-    display: block;
-    padding: 1rem 0rem;
-  }
-  p {
-    display: ${(props): string => (props.visible ? 'block' : 'none')};
-  }
-  @media (min-width: 768px) {
-    span {
-      display: none;
-    }
-    p {
-      display: block;
-    }
-  }
-`;
-const DescriptionWrapper: React.FC = ({ children }: { children: React.ReactNode }) => {
-  const [visible, setVisible] = useState(false);
-  return (
-    <StyledDescriptionWrapper visible={visible}>
-      <button type="button" onClick={(): void => setVisible(!visible)}>
-        read {visible ? 'less ( - )' : 'more ( + )'}
-        <br />
-      </button>
-      <p>{children}</p>
-    </StyledDescriptionWrapper>
-  );
-};
+
 
 type CarouselProps = {
   children: React.ReactNode;
@@ -251,7 +223,7 @@ const ProjectComponent: React.FC<Project> = ({
       <h4>Description</h4>
       <p>{lead}</p>
 
-      {description && <DescriptionWrapper>{description}</DescriptionWrapper>}
+      {description && <Description>{description}</Description>}
       <h4>Links</h4>
       <ul>
         {links &&
