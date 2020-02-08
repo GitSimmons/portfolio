@@ -1,5 +1,5 @@
 
-import React from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import { View } from '../data/projects';
 
@@ -89,23 +89,22 @@ const Scroller: React.FC<Views> = ({ views }: Views) => {
     tablet: 0.77,
     mobile: 0.58,
   };
-
   const formats = Object.keys(aspectRatios);
-  const screenshots = views.reduce((acc, value) => {
+  const imageRefs = views.reduce((acc, view) => {
     // eslint-disable-next-line no-return-assign
-    formats.map((format) => (acc[value.name + format] = React.createRef<HTMLElement | null>()));
+    formats.map((format) => (acc[view.name + format] = useRef()));
     return acc;
   }, {});
-  const handleClick = (name: string): void => {
-    // For each view, scroll the parent container of a given screenshot to the screenshot's ref.
+  const handleClick = (name: View["name"]): void => {
+    // For each format, scroll the parent container of a given screenshot to the screenshot's ref.
     formats.map((format) => {
-      // A quick polyfill for Edge
-      if (!screenshots[name + format].current.parentElement.scrollTo) {
-        return screenshots[name + format].current.scrollIntoView();
+      // A quick polyfill for Edge, if ScrollTo doesn't exist, use ScrollIntoView
+      if (!imageRefs[name + format].current.parentElement.scrollTo) {
+        return imageRefs[name + format].current.scrollIntoView();
       }
       // scrollTo because Chrome has a bug where it can only smooth animate 1 scrollIntoView
-      return screenshots[name + format].current.parentElement.scrollTo({
-        top: screenshots[name + format].current.offsetTop,
+      return imageRefs[name + format].current.parentElement.scrollTo({
+        top: imageRefs[name + format].current.offsetTop,
         behavior: 'smooth',
       });
     });
@@ -119,7 +118,7 @@ const Scroller: React.FC<Views> = ({ views }: Views) => {
               (view) =>
                 view[format] && (
                   <ImageWrapper
-                    ref={screenshots[view.name + format]}
+                    ref={imageRefs[view.name + format]}
                     key={view.name + view[format]}
                   >
                     <img
