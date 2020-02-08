@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React from 'react';
 import { Project } from '../data/projects';
 import Description from './Description'
 const StyledProject = styled.div`
@@ -34,6 +34,8 @@ const StyledProject = styled.div`
   a,
   span,
   button {
+    text-transform: uppercase;
+
     background-color: ${(props): string => props.theme.colors.background};
     text-decoration: none;
     color: ${(props): string => props.theme.colors.buttonColor};
@@ -222,7 +224,6 @@ const ProjectComponent: React.FC<Project> = ({
       <ul>{tools && tools.map((tool) => <li key={tool}>{tool}</li>)}</ul>
       <h4>Description</h4>
       <p>{lead}</p>
-
       {description && <Description>{description}</Description>}
       <h4>Links</h4>
       <ul>
