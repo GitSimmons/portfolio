@@ -100,24 +100,25 @@ const projects: {
         },
       ],
       tools: [
-        'Typescript',
+        'TYPESCRIPT',
         'REACT',
         'NEXT',
         'STYLED-COMPONENTS',
         'PUPPETEER',
         'FIRESTORE',
         'AWS LAMBDA',
+        'JEST',
       ],
       lead:
-        'Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.',
-      description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. Sorry the backend GH is currently available. Chrome + Puppetteer for AWS lambda doesn't align perfectly with running it locally, and the secrets are setup in a strange way. I'll work on getting a local-friendly version up soon!`,
+        'Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance.',
+      description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on Google Cloud Functions (formerly on AWS Lambda) and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. This project was recently migrated to GCF from Lambda, and rewritten in TypeScript.`,
       links: [
         { name: 'LIVE SITE', href: 'https://r0mvptracker.now.sh/' },
         {
           name: 'Front-end Github',
           href: 'https://github.com/GitSimmons/r0mvptracker',
         },
-        { name: 'Back-end Github' },
+        { name: 'Back-end Github', href: 'https://github.com/GitSimmons/r0mvptracker-backend' },
       ],
     },
     {
@@ -259,31 +260,33 @@ const projects: {
       title: 'Ragnarok MVP',
       views: [
         {
-          name: 'Accueil',
+          name: 'SPA',
           desktop: '/projects/ragnarok/ragnarok-desktop',
           tablet: '/projects/ragnarok/ragnarok-tablet',
           mobile: '/projects/ragnarok/ragnarok-mobile',
         },
       ],
       tools: [
-        'Typescript',
+        'TYPESCRIPT',
         'REACT',
         'NEXT',
         'STYLED-COMPONENTS',
         'PUPPETEER',
         'FIRESTORE',
         'AWS LAMBDA',
+        'JEST',
       ],
-      lead:
-        'Ragnarok is an online game with server wide bosses to hunt. This tool helps players to see which bosses are available at a glance rather than spending time consulting the previous solution - a manually updated google spreadsheet.',
-      description: `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on AWS Lambda and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. Sorry the backend GH is currently available. Chrome + Puppetteer for AWS lambda doesn't align perfectly with running it locally, and the secrets are setup in a strange way. I'll work on getting a local-friendly version up soon!`,
+      lead: `En Ragnarok, les joueuers chassent des boss partagées par l'ensemble du serveur. Cet util aide ces joueuers à voir rapidement celles qui sont toujours disponibles.`,
+      description: `
+      L'effet est accompli par recueillir les donnés d'un site web qui liste les chasses réussis récemment avec Puppeteer sur Google Cloud Functions.`,
+      //      `This is accomplished by scraping an online page that lists the latest kills of these bosses with Puppeteer running on Google Cloud Functions (formerly on AWS Lambda) and then updating a FireStore database. On the front-end, NextJS renders out the basic table and pulls the data through a subscription to FireStore. Because NextJS uses SSR, requests to the database are kept constant rather than based on current users. This project was recently migrated to GCF from Lambda, and rewritten in TypeScript.`,
       links: [
-        { name: 'LIVE', href: 'https://r0mvptracker.now.sh/' },
+        { name: 'LIVE SITE', href: 'https://r0mvptracker.now.sh/' },
         {
           name: 'Front-end Github',
           href: 'https://github.com/GitSimmons/r0mvptracker',
         },
-        { name: 'Back-end Github' },
+        { name: 'Back-end Github', href: 'https://github.com/GitSimmons/r0mvptracker-backend' },
       ],
     },
     {
