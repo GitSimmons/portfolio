@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import React from 'react';
 import { Project } from '../data/projects';
-import Description from './Description'
-import Scroller from './Scroller'
+import Description from './Description';
+import Scroller from './Scroller';
 
 const StyledProject = styled.div`
   background-image: ${(props): string => props.theme.colors.gradient};
@@ -37,7 +37,7 @@ const StyledProject = styled.div`
   span,
   button {
     text-transform: uppercase;
-    background-color: ${(props): string => props.theme.colors.background};
+    background-color: Transparent;
     text-decoration: none;
     color: ${(props): string => props.theme.colors.buttonColor};
     cursor: pointer;
@@ -95,12 +95,12 @@ const ProjectComponent: React.FC<Project> = ({
                   {link.name}
                 </a>
               ) : (
-                  link.name
-                )}
+                link.name
+              )}
             </li>
           ))}
       </ul>
-    </StyledProject >
+    </StyledProject>
   );
 };
 export default ProjectComponent;
