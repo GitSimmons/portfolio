@@ -39,10 +39,7 @@ const Home: React.FC = () => {
             content="Ben Simmons is a full stack developer who works primarily with React, Typescript and GraphQL."
           />
 
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=UA-157528793-1"
-          />
+          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-157528793-1" />
           <script
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{
@@ -51,7 +48,7 @@ const Home: React.FC = () => {
         function gtag(){window.dataLayer.push(arguments)}
         gtag("js", new Date());
         gtag("config", "UA-157528793-1");
-    `
+    `,
             }}
           />
         </Head>
@@ -65,6 +62,20 @@ const Home: React.FC = () => {
           </p>
         </Hero>
         <LocaleSwitcher />
+        {locale === 'fr' && (
+          <div style={{ backgroundColor: theme.colors.buttonColor }}>
+            <p
+              style={{
+                fontSize: '1rem',
+                padding: '1rem',
+                color: theme.colors.textColor,
+              }}
+            >
+              Malheureusement, je viens d'ajouter le système de localisation au site et les
+              traductions sont d'abords toujours en cours.
+            </p>
+          </div>
+        )}
         <div style={{ position: 'relative', display: 'flex' }}>
           <ToC>
             <p>{t('projects')}</p>
@@ -81,7 +92,15 @@ const Home: React.FC = () => {
           </ToC>
           <div id="projects">
             {projects[locale].map(({ title, views, tools, lead, description, links }) => (
-              <Project title={title} tools={tools} views={views} lead={lead} description={description} links={links} key={title} />
+              <Project
+                title={title}
+                tools={tools}
+                views={views}
+                lead={lead}
+                description={description}
+                links={links}
+                key={title}
+              />
             ))}
           </div>
         </div>
@@ -89,6 +108,6 @@ const Home: React.FC = () => {
       </Container>
     </ThemeProvider>
   );
-}
+};
 
 export default Home;
